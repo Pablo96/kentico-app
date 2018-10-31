@@ -1,1 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+$green:   #00FFC4 !important;
+
+$link-color: $green !important;
+$body-bg: #1A1B1D !important;
+
+$font-family-sans-serif:      "Raleway", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+body {
+    background: #1A1B1D;
+}
+
+.text-primary
+{
+    color: $green;
+}
+
+.navbar {
+    width: 100%;
+    background: none !important;
+
+    @media(max-width: 36em) {
+        background: black !important;
+
+    }
+    .navbar-toggler {
+        cursor: pointer;
+        outline: 0;
+    }
+    .nav-link {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .nav-item {
+        padding: 0 1rem;
+        @media(max-width: 36em){
+            padding: 0;
+        }
+        .nav-link {
+            @media(max-width: 36em){
+                font-weight: bold;
+                color: white !important;
+            }
+        }
+    }
+}
+
+.dropdown-menu {
+    background: #FFFf;
+}
+
+#innerList{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: inherit;
+}

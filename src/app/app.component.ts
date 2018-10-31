@@ -6,5 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'kentico-app';
+  title = 'Pablo Narvaja';
+  items: string[][];
+
+  constructor() {
+    this.items = [
+      ["All Blogs"],
+      [
+        "Game Physics",
+        "Game Graphics",
+        "Game Input",
+        "Game Resources",
+        "Game Networking"
+      ],
+      ["Operative Systems"],
+      [
+        "Web",
+        "Android"
+      ]
+    ]
+  }
 }
