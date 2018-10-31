@@ -1,21 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { BlogListComponent } from './blog-list/blog-list.component';
-import { DeliveryClientProvider } from './services/kentico-deliver-client.provider';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    BlogListComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule
+    BrowserModule
   ],
-  providers: [DeliveryClientProvider],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
