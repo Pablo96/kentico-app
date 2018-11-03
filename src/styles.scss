@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
-$green:   #00FFC4 !important;
+$green:   rgb(223, 223, 223) !important;
 
 $link-color: $green !important;
 $body-bg: #1A1B1D !important;
@@ -9,7 +9,7 @@ $body-bg: #1A1B1D !important;
 $font-family-sans-serif:      "Raleway", Roboto, "Helvetica Neue", Arial, sans-serif;
 
 body {
-    background: #1A1B1D;
+    background: white;
 }
 
 .text-primary
@@ -19,7 +19,7 @@ body {
 
 .navbar {
     width: 100%;
-    background: none !important;
+    background:  rgb(7, 74, 206) !important;
 
     @media(max-width: 36em) {
         background: black !important;
