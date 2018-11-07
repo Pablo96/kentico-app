@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
-$grey-200: #e9ecef !important;
+$gray-200: #e9ecef !important;
+$gray-900: #212529 !important;
 $orange:  #fd7e14 !important;
 $body-bg: #1A1B1D !important;
 
@@ -13,7 +14,7 @@ body {
 
 .text-primary
 {
-    color:$grey-200;
+    color:$gray-200;
 }
 
 .navbar {
@@ -52,4 +53,9 @@ body {
 .bg-dark
 {
     background:$body-bg;
+}
+
+.bg-orange
+{
+    background:$orange;
 }
