@@ -9,19 +9,23 @@ import { AppComponent } from './app.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { DeliveryClientProvider } from './Providers/delivery-client.provider';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ArtComponent } from './art/art.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlogListComponent,
     WelcomeComponent,
+    ArtComponent,
     
   ],
   imports: [
     BrowserModule,
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [DeliveryClientProvider],
   bootstrap: [AppComponent]
