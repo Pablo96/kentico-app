@@ -4,6 +4,7 @@ export class BlogPreview extends ContentItem {
     public title: Fields.TextField;
     public description: Fields.RichTextField;
     public date: Fields.DateTimeField;
+    public serie: Fields.TextField;
 
     constructor() {
         super({

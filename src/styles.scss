@@ -1,25 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
-$green:   rgb(223, 223, 223) !important;
-
-$link-color: $green !important;
+$grey-200: #e9ecef !important;
+$orange:  #fd7e14 !important;
 $body-bg: #1A1B1D !important;
 
 $font-family-sans-serif:      "Raleway", Roboto, "Helvetica Neue", Arial, sans-serif;
 
 body {
-    background: white;
+    background: $body-bg;
 }
 
 .text-primary
 {
-    color: $green;
+    color:$grey-200;
 }
 
 .navbar {
     width: 100%;
-    background:  rgb(7, 74, 206) !important;
+    background:  rgb(46, 46, 46) !important;
 
     @media(max-width: 36em) {
         background: black !important;
@@ -32,6 +31,9 @@ body {
     .nav-link {
         text-transform: uppercase;
         font-weight: bold;
+    }
+    .nav-link:active, .nav-link:hover {
+        color: orange;
     }
     .nav-item {
         padding: 0 1rem;
@@ -47,13 +49,7 @@ body {
     }
 }
 
-.dropdown-menu {
-    background: #FFFf;
-}
-
-#innerList{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    background: inherit;
+.bg-dark
+{
+    background:$body-bg;
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DeliveryClient } from 'kentico-cloud-delivery';
 
 @Component({
   selector: 'app-root',
@@ -7,23 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Pablo Narvaja';
-  items: string[][];
+  BlogSeries: string[];
 
-  constructor() {
-    this.items = [
-      ["All Blogs"],
-      [
-        "Game Physics",
-        "Game Graphics",
-        "Game Input",
-        "Game Resources",
-        "Game Networking"
-      ],
-      ["Operative Systems"],
-      [
-        "Web",
-        "Android"
-      ]
-    ]
+  constructor(private deliver: DeliveryClient) {
+    this.BlogSeries = ["All"];
+  }
+
+  getSeries()
+  {
+    
   }
 }

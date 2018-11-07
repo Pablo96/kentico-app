@@ -1,8 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="container">
+<div class="container-fullwidth" style="height: 4.5rem;">
   <div class="row">
     <nav class="navbar navbar-expand-sm navbar-dark nav-pills
-      shadow-sm p-3 mb-5 bg-white">
+      shadow-sm p-3 mb-5 bg-white fixed-top">
       <a href="#" class="navbar-brand text-primary" id="logo"> {{title}} </a>
 
       <button (click)="isCollapsed = !isCollapsed" class="navbar-toggler navbar-toggler-right"
@@ -13,33 +13,116 @@
     
       <div id="navbarSupportedContent" class="collapse navbar-collapse" [collapse]="!isCollapsed">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item dropdown active">
-            <span dropdown>
-                <a class="nav-link text-primary" href id="basic-link"
-                  dropdownToggle (click)="false"
-                  aria-controls="basic-link-dropdown">Blogs</a>
-                <ul id="basic-link-dropdown" *dropdownMenu class="dropdown-menu"
-                    role="menu" aria-labelledby="basic-link">
-                  <li *ngFor="let serie of items">
-                    <ul id="innerList">
-                      <li *ngFor="let choice of serie">
-                      <a class="dropdown-item" href="#">{{choice}}</a>
-                    </ul>
-                    <div class="dropdown-divider"></div>
-                  </li>
-                </ul>
-              </span>
+          <li class="nav-item">
+            <a class="nav-link" href="#"> Welcome </a>
+          </li>
+          <li class="nav-item btn-group" dropdown>
+              <a class="nav-link " href="#">Blogs</a>
+              <a id="button-split" dropdownToggle class="nav-link dropdown-toggle dropdown-toggle-split"
+                      aria-controls="dropdown-split">
+              </a>
+              <ul id="dropdown-split" *dropdownMenu class="dropdown-menu"
+                  role="menu" aria-labelledby="button-split">
+                <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+                <li role="menuitem"><a class="dropdown-item" href="#">Another action</a>
+                </li>
+                <li role="menuitem"><a class="dropdown-item" href="#">Something else
+                  here</a></li>
+                <li class="divider dropdown-divider"></li>
+                <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+                </li>
+              </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-primary" href="#"> Art </a>
+            <a class="nav-link" href="#"> Art </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-primary" href="#"> Projects </a>
+            <a class="nav-link" href="#"> Projects </a>
           </li>
         </ul>  
       </div>
     </nav>
   </div>
 </div>
-<app-blog-list></app-blog-list>
 
+<app-welcome></app-welcome>
+
+<footer class="fixed-bottom">
+  <div class="container-fullwidth bg-dark" style="padding: 1em;">
+    <!-- Social -->
+    <div class="row flex-center">
+      <div class="col-md-12 py5 flex-center">
+        <div class="mb-7 flex-center">
+          <!-- GitHub -->
+          <a class="icon-tag" title="Github" href="http://github.com/Pablo96">
+            <i class="socicon-github white-text mr-md-5 mr-3"> </i>
+          </a>
+          <!-- LinkedIn -->
+          <a class="icon-tag" title="LinkedIn" href="https://www.linkedin.com/in/pablo-narvaja-35615813b/">
+            <i class="socicon-linkedin white-text mr-md-5 mr-3"> </i>
+          </a>
+          <!-- Youtube -->
+          <a class="icon-tag" title="YouTube" href="https://www.youtube.com/channel/UCtri-c1EvlHBeOLzAbyv5zg">
+            <i class="socicon-youtube white-text mr-md-5 mr-3"> </i>
+          </a>
+          <!-- Patreon -->
+          <a class="icon-tag" title="Patreon">
+            <i class="socicon-patreon white-text mr-md-5 mr-3"> </i>
+          </a>
+          <!-- Discord -->
+          <a class="icon-tag" title="Discord">
+            <i class="socicon-discord white-text mr-md-5 mr-3"> </i>
+          </a>
+          <!-- Visual Studio Code -->
+          <a href="https://code.visualstudio.com/"
+          title="Visual Studio Code - Text Editor">
+           <img class="mr-md-5 mr-3"  alt="VisualStudioCode" style="width: 2rem;"
+            src="assets/VS_Code_1.18.svg">
+          </a>
+          <!-- Visual Studio IDE -->
+          <a href="https://code.visualstudio.com/"
+          title="Visual Studio Community - IDE">
+           <img class="mr-md-5 mr-3"  alt="VisualStudioCommunity" style="width: 2rem;"
+            src="assets/VS_2017_Logo.svg">
+          </a>
+          <!-- Blender -->
+          <a href="https://www.blender.org"
+          title="Blender 3D - modeling tool">
+            <img class="mr-md-5 mr-3" alt="Blender3D" style="width: 2rem;"
+             src="assets/blender3d.svg">
+          </a>
+          <!-- GIMP -->
+          <a href="https://www.gimp.org/"
+          title="GIMP - Image manipulation tool">
+            <img class="mr-md-5 mr-3"  alt="GIMP" style="width: 2rem;"
+             src="https://upload.wikimedia.org/wikipedia/commons/4/45/The_GIMP_icon_-_gnome.svg">
+          </a>
+          <!-- Inkscape -->
+          <a href="https://inkscape.org/"
+          title="Inskape- SVG tool">
+           <img class="mr-md-5 mr-3"  alt="Inkscape" style="width: 2rem;"
+            src="https://inkscape.org/es/gallery/item/1076/Inkscape_Logo_Standard_square.svg">
+         </a>
+         <!-- Credits to freepik -->
+         <a href="https://www.freepik.com"
+          title="Icon by Freepik">
+            <img class="mr-md-5 mr-3"
+            src="assets/profile.svg" alt="Freepik's_Icons" style="width: 2rem;">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Programs and languages icons -->
+
+  <!-- Credits -->
+  <div class="bg-grey-off">Profile icons made by 
+    <a href="https://www.freepik.com" title="Freepik">Freepik</a>
+      from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 
+    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+    Social icons font:
+    <a href="http://www.socicon.com" target="_blank" alt="Free social icons font" title="the social icons font">socicon</a>
+  </div>
+</footer>

@@ -1,0 +1,24 @@
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+ 
+#{$a-tags} {
+  color: #F91;
+  text-decoration: none;
+}
+#{$a-tags-hover} {
+  color: #19F;
+}
+
+.icon-tag:active, .icon-tag:hover, .icon-tag:visited{
+    color: #EEE;
+    text-decoration: none;
+}
+.icon-tag:active, .icon-tag:hover{
+    color: #CCC;
+}
+
+.bg-grey-off 
+{
+    background: #444;
+    color: #EEE;
+}

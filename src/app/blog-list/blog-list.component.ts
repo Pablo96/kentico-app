@@ -26,16 +26,6 @@ export class BlogListComponent implements OnInit {
   ngOnInit() {
   }
 
-  getBlogPrev() {
-    this.deliveryClient
-    .item<BlogPreview>("game_physics_1")
-    .depthParameter(1)
-    .getObservable()
-    .subscribe( response => {
-      //this.blog = response.item;
-    })
-  }
-
   getBlogs() {
     this.deliveryClient
     .items<BlogPreview>()
@@ -48,6 +38,7 @@ export class BlogListComponent implements OnInit {
       result => {
         console.log(result);
         this.blogs = result.items;
+        
       },
       error => {
         this.handleCloudError(error);

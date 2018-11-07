@@ -1,11 +1,15 @@
 <div class="card-deck">
   <div *ngFor="let blog of blogs">
-    <p>{{blog.description.text}}</p>
-    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+    <div class="card text-white bg-primary mb-3" style="width: 20rem;">
+      <div class="card-header"> Game Physics Series </div>
+      <img class="card-img" src="https://angular.io/assets/images/logos/angular/angular.svg"
+       alt="Card image cap" style="background: lightslategray;">
       <div class="card-block">
         <h5 class="card-title">{{blog.title.text}}</h5>
-        <p class="card-text">{{blog.description.text}}</p>
-        <p class="card-text"><small class="text-muted">{{blog.date.text}}</small></p>
+        <div innerHtml="{{blog.description.value}}" class="card-text"></div>
+      </div>
+      <div class="card-footer text-right">
+        <small>{{blog.date.value}}</small>
       </div>
     </div>
   </div>
