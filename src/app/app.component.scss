@@ -13,12 +13,38 @@ $a-tags-hover: 'a:active, a:hover';
     color: #EEE;
     text-decoration: none;
 }
-.icon-tag:active, .icon-tag:hover{
+.icon-tag:active, .icon-tag:hover {
     color: #CCC;
 }
 
-.bg-grey-off 
-{
+.bg-grey-off {
     background: #444;
     color: #EEE;
+}
+
+.nav-btn-group {
+    height: 18px;
+}
+
+.nav-btn-img {
+    column-span: 1;
+    height: 100%;
+    width: 36px;
+    margin-left: 6px;
+    margin-right: 6px; 
+}
+
+.bg-black {
+    background: black;
+}
+
+.desktop {
+    @media(max-width: 36em) {
+        display: none !important;
+    }
+}
+.mobile {
+    @media(min-width: 36em) {
+        display: none !important;
+    }
 }

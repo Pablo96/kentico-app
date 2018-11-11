@@ -16,27 +16,53 @@
           <li class="nav-item">
             <a class="nav-link" href="welcome"> Welcome </a>
           </li>
-          <li class="nav-item btn-group" dropdown>
+          <!-- dropdown for desktop version -->
+          <li class="nav-item btn-group desktop" dropdown >
               <a class="nav-link " href="blogs">Blogs</a>
-              <a id="button-split" dropdownToggle class="nav-link dropdown-toggle dropdown-toggle-split"
-                      aria-controls="dropdown-split">
+              <a id="button-split" dropdownToggle
+               class="nav-link dropdown-toggle dropdown-toggle-split"
+               aria-controls="dropdown-split">
               </a>
               <ul id="dropdown-split" *dropdownMenu class="dropdown-menu"
                   role="menu" aria-labelledby="button-split">
-                <li role="menuitem"><a class="dropdown-item" href="#">Game Physics</a></li>
-                <li role="menuitem"><a class="dropdown-item" href="#">Game Network</a>
+                <li role="menuitem"><a class="dropdown-item" href="javascript:">Game Physics</a></li>
+                <li role="menuitem"><a class="dropdown-item" href="javascript:">Game Network</a>
                 </li>
-                <li role="menuitem"><a class="dropdown-item" href="#">Game Graphics</a></li>
+                <li role="menuitem"><a class="dropdown-item" href="javascript:">Game Graphics</a></li>
                 <li class="divider dropdown-divider"></li>
-                <li role="menuitem"><a class="dropdown-item" href="#">Otros</a>
+                <li role="menuitem"><a class="dropdown-item" href="javascript:">Otros</a>
                 </li>
               </ul>
+          </li>
+          <!-- Accordion for mobile version -->
+          <li class="nav-item mobile">
+            <accordion class="nav-link bg-dark">
+              <accordion-group heading="Blogs" panelClass="nav-link-dark">
+                <ul>
+                  <li role="menuitem"><a class="dropdown-item" href="#">Game Physics</a></li>
+                  <li role="menuitem"><a class="dropdown-item" href="#">Game Network</a>
+                  </li>
+                  <li role="menuitem"><a class="dropdown-item" href="#">Game Graphics</a></li>
+                  <li class="divider dropdown-divider"></li>
+                  <li role="menuitem"><a class="dropdown-item" href="#">Otros</a>
+                  </li>
+                </ul>
+              </accordion-group>
+            </accordion>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="art"> Art </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"> Projects </a>
+            <a class="nav-link" href="projects"> Projects </a>
+          </li>
+          <li class="nav-item nav-btn-group">
+              <a href="javascript:" (click)="changeLanguage('eng')">
+                <img class="nav-btn-img" src="assets/uk_flag.svg" alt="English">
+              </a>
+              <a href="javascript:" (click)="changeLanguage('spa')">
+                <img class="nav-btn-img" src="assets/spain_flag_no_shield.svg" alt="Español">
+              </a>
           </li>
         </ul>  
       </div>

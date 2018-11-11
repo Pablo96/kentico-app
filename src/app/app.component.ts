@@ -9,13 +9,33 @@ import { DeliveryClient } from 'kentico-cloud-delivery';
 export class AppComponent {
   title = 'Pablo Narvaja';
   BlogSeries: string[];
+  pageLang: string;
 
   constructor(private deliver: DeliveryClient) {
+    this.pageLang = "en";
     this.BlogSeries = ["All"];
   }
 
   getSeries()
   {
     
+  }
+
+  changeLanguage(language: string) {
+    console.log(language);
+    switch (language)
+    {
+      case "eng": {
+        this.pageLang = "en";
+        location.reload();
+        break;
+      }
+      case "spa":
+      {
+        this.pageLang = "es";
+        location.reload();
+        break;
+      }
+    }
   }
 }
