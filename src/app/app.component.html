@@ -26,7 +26,7 @@
               <ul id="dropdown-split" *dropdownMenu class="dropdown-menu"
                   role="menu" aria-labelledby="button-split">
                 <li role="menuitem"  *ngFor="let serie of blogSeries">
-                  <a class="dropdown-item" href="javascript:">{{serie}}</a>
+                  <a class="dropdown-item" href="{{serie.url}}">{{serie.name}}</a>
                 </li>
               </ul>
           </li>

@@ -10,13 +10,13 @@ import { CloudError } from 'kentico-cloud-core';
 })
 export class AppComponent {
   title = 'Pablo Narvaja';
-  blogSeries: string[];
+  blogSeries: {name: string, url: string}[];
   staticTextLocal: Map<string, string>;
   private error?: string;
   
   
   constructor(private deliver: DeliveryClient, public commonService: CommonService) {
-    this.blogSeries = ["All"];
+    this.blogSeries = [{name:"All", url: "blogs"}];
     this.getSeries();
 
     this.staticTextLocal = new Map<string, string>();
@@ -37,7 +37,11 @@ export class AppComponent {
     .getObservable()
     .subscribe( result => {
       for (let taxonomy of result.taxonomies)
-        this.blogSeries.push(taxonomy.terms[0].name);
+        this.blogSeries.push(
+          {
+            name: taxonomy.terms[0].name,
+            url: taxonomy.terms[0].codename
+          });
     },
     error => {
       this.handleCloudError(error);

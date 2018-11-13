@@ -28,12 +28,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     AccordionModule.forRoot(),
+    AppRoutingModule,
   ],
   providers: [DeliveryClientProvider],
   bootstrap: [AppComponent]
