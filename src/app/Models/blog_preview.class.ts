@@ -4,7 +4,7 @@ export class BlogPreview extends ContentItem {
     public title: Fields.TextField;
     public description: Fields.TextField;
     public date: Fields.DateTimeField;
-    public serie: Fields.TextField;
+    public serie: Fields.TaxonomyField;
 
     constructor() {
         super({
@@ -17,6 +17,9 @@ export class BlogPreview extends ContentItem {
             }
             if (fieldName === 'date') {
                 return 'date';
+            }
+            if (fieldName === 'blogsseries') {
+                return 'serie';
             }
         }
         });

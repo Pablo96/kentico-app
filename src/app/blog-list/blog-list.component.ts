@@ -14,7 +14,7 @@ export class BlogListComponent implements OnInit {
   public blogs: BlogPreview[];
   public pageSize = 10;
   // optional member ?:
-  public error?: string;
+  private error?: string;
 
 
   constructor(private commonService: CommonService, private deliveryClient: DeliveryClient) {
