@@ -13,34 +13,22 @@ export class BlogListComponent implements OnInit {
 
   public blogs: BlogPreview[];
   public pageSize = 10;
-  public language: string;
   // optional member ?:
   public error?: string;
 
 
-
-
-  constructor(private deliveryClient: DeliveryClient, private commonService: CommonService) {
-    this.language = commonService.languageChanged_Observable.getValue();
-    this.getBlogs();
+  constructor(private commonService: CommonService) {
+    this.getBlogs(this.pageSize);
   }
 
   ngOnInit() {
     this.commonService.languageChanged_Observable.subscribe( value => {
-      this.language = value;
-      this.getBlogs();
+      this.getBlogs(this.pageSize);
     })
   }
 
-  getBlogs() {
-    this.deliveryClient
-    .items<BlogPreview>()
-    .type("blogpreview")
-    .languageParameter(this.language)
-    .depthParameter(1)
-    .limitParameter(this.pageSize)
-    .orderByDescending("elements.date")
-    .getObservable()
+  public getBlogs(pageSize) {
+    this.commonService.getBlogs(pageSize)
     .subscribe(
       result => {
         console.log(result);

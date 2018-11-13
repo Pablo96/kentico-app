@@ -14,11 +14,11 @@
       <div id="navbarSupportedContent" class="collapse navbar-collapse" [collapse]="!isCollapsed">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="welcome"> Welcome </a>
+            <a class="nav-link" href="welcome"> {{staticTextLocal.get('welcome')}} </a>
           </li>
           <!-- dropdown for desktop version -->
           <li class="nav-item btn-group desktop" dropdown >
-              <a class="nav-link " href="blogs">Blogs</a>
+              <a class="nav-link " href="blogs">{{staticTextLocal.get('blogs')}}</a>
               <a id="button-split" dropdownToggle
                class="nav-link dropdown-toggle dropdown-toggle-split"
                aria-controls="dropdown-split">
@@ -37,7 +37,7 @@
           <!-- Accordion for mobile version -->
           <li class="nav-item mobile">
             <accordion class="nav-link bg-dark">
-              <accordion-group heading="Blogs" panelClass="nav-link-dark">
+              <accordion-group heading="{{staticTextLocal.get('blogs')}}" panelClass="nav-link-dark">
                 <ul>
                   <li role="menuitem"><a class="dropdown-item" href="#">Game Physics</a></li>
                   <li role="menuitem"><a class="dropdown-item" href="#">Game Network</a>
@@ -51,10 +51,10 @@
             </accordion>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="art"> Art </a>
+            <a class="nav-link" href="art"> {{staticTextLocal.get('art')}} </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="projects"> Projects </a>
+            <a class="nav-link" href="projects"> {{staticTextLocal.get('projects')}} </a>
           </li>
           <li class="nav-item nav-btn-group">
               <a href="javascript:" (click)="changeLanguage('en')">

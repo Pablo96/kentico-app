@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
@@ -21,15 +23,15 @@ import { ProjectsListComponent } from './projects-list/projects-list.component';
     WelcomeComponent,
     ArtComponent,
     ProjectsListComponent,
-    
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
     CollapseModule.forRoot(),
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     AccordionModule.forRoot(),
-    AppRoutingModule
   ],
   providers: [DeliveryClientProvider],
   bootstrap: [AppComponent]

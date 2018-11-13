@@ -10,9 +10,18 @@ import { CommonService } from './Services/common.service';
 export class AppComponent {
   title = 'Pablo Narvaja';
   BlogSeries: string[];
-
-  constructor(private deliver: DeliveryClient, private commonService: CommonService) {
+  staticTextLocal: Map<string, string>;
+  
+  
+  constructor(private deliver: DeliveryClient, public commonService: CommonService) {
     this.BlogSeries = ["All"];
+    
+    commonService.languageChanged_Observable
+    .subscribe( result => {
+      this.staticTextLocal = commonService.staticTextLocalsCurrent;
+    });
+
+    //commonService.notifyLanguageChange(commonService.languageChanged_Observable.getValue().lang);
   }
 
   getSeries()
@@ -21,7 +30,6 @@ export class AppComponent {
   }
 
   changeLanguage(language: string) {
-    console.log(language);
     this.commonService.notifyLanguageChange(language);
   }
 }
