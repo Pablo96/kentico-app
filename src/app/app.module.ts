@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ArtComponent } from './art/art.component';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { BlogViewComponent } from './blog-view/blog-view.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ArtComponent,
     ProjectsListComponent,
     PageNotFoundComponent,
+    BlogViewComponent,
   ],
   imports: [
     BrowserModule,
