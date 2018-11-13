@@ -17,7 +17,7 @@ export class BlogListComponent implements OnInit {
   public error?: string;
 
 
-  constructor(private commonService: CommonService) {
+  constructor(private commonService: CommonService, private deliveryClient: DeliveryClient) {
     this.getBlogs(this.pageSize);
   }
 
@@ -28,12 +28,19 @@ export class BlogListComponent implements OnInit {
   }
 
   public getBlogs(pageSize) {
-    this.commonService.getBlogs(pageSize)
+    //this.commonService.getBlogs(pageSize)
+    this.deliveryClient
+    .items<BlogPreview>()
+    .type("blogpreview")
+    .languageParameter(this.commonService.languageChanged_Observable.getValue().lang)
+    .depthParameter(1)
+    .limitParameter(pageSize)
+    .orderByDescending("elements.date")
+    .getObservable()
     .subscribe(
       result => {
         console.log(result);
         this.blogs = result.items;
-        
       },
       error => {
         this.handleCloudError(error);
