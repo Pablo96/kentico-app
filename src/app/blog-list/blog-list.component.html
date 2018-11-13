@@ -1,15 +1,22 @@
-<div class="card-deck">
-  <div *ngFor="let blog of blogs">
-    <div class="card text-white bg-orange mb-3" style="width: 18rem;">
-      <div class="card-header"> Game Physics Series </div>
-      <img class="card-img" src="https://angular.io/assets/images/logos/angular/angular.svg"
-       alt="Card image cap" style="background: lightslategray;">
-      <div class="card-block">
-        <h5 class="card-title">{{blog.title.text}}</h5>
-        <div class="card-text"> {{blog.description.value}} </div>
-      </div>
-      <div class="card-footer text-right">
-        <small>{{blog.date.value}}</small>
+<div style="padding: 0.5em;">
+  <div class="card-deck">
+    <div *ngFor="let blog of blogs">
+      <div class="card border-warning text-white bg-dark mb-3"
+       style="width: 18rem; padding: 0.2em;">
+        <div style="height: 36px; padding-top: 0.3em;
+         padding-left: 1.0em; padding-right: 1.0em;">
+           Game Physics Series
+        </div>
+        <img class="card-img" src="https://angular.io/assets/images/logos/angular/angular.svg"
+         alt="Card image cap" style="background: lightslategray;">
+        <div class="card-block">
+          <h5 class="card-title">{{blog.title.text}}</h5>
+          <div class="card-text"> {{blog.description.value}} </div>
+        </div>
+        <hr style="margin-bottom: 0; border-color: #FA03;">
+        <div class="text-right" style="margin: 0.3em;">
+          <small>{{blog.date.value}}</small>
+        </div>
       </div>
     </div>
   </div>

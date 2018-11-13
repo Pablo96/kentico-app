@@ -48,3 +48,10 @@ $a-tags-hover: 'a:active, a:hover';
         display: none !important;
     }
 }
+
+.shadow-top {
+    border: 1px solid #0000;
+    box-shadow: 0 -5px 5px -5px #0005;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}

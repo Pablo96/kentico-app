@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BlogPreview } from '../Models/blog_preview.class';
 import { DeliveryClient } from 'kentico-cloud-delivery';
 import { CloudError } from 'kentico-cloud-core';
+import { CommonService } from '../Services/common.service';
 
 @Component({
   selector: 'app-blog-list',
@@ -12,24 +13,30 @@ export class BlogListComponent implements OnInit {
 
   public blogs: BlogPreview[];
   public pageSize = 10;
-
+  public language: string;
   // optional member ?:
   public error?: string;
 
 
 
 
-  constructor(private deliveryClient: DeliveryClient) {
+  constructor(private deliveryClient: DeliveryClient, private commonService: CommonService) {
+    this.language = 'en';
     this.getBlogs();
   }
 
   ngOnInit() {
+    this.commonService.languageChanged_Observable.subscribe( value => {
+      this.language = value;
+      this.getBlogs();
+    })
   }
 
   getBlogs() {
     this.deliveryClient
     .items<BlogPreview>()
     .type("blogpreview")
+    .languageParameter(this.language)
     .depthParameter(1)
     .limitParameter(this.pageSize)
     .orderByDescending("elements.date")

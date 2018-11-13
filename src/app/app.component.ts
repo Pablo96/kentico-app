@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DeliveryClient } from 'kentico-cloud-delivery';
+import { CommonService } from './Services/common.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ export class AppComponent {
   BlogSeries: string[];
   pageLang: string;
 
-  constructor(private deliver: DeliveryClient) {
+  constructor(private deliver: DeliveryClient, private commonService: CommonService) {
     this.pageLang = "en";
     this.BlogSeries = ["All"];
   }
@@ -23,19 +24,6 @@ export class AppComponent {
 
   changeLanguage(language: string) {
     console.log(language);
-    switch (language)
-    {
-      case "eng": {
-        this.pageLang = "en";
-        location.reload();
-        break;
-      }
-      case "spa":
-      {
-        this.pageLang = "es";
-        location.reload();
-        break;
-      }
-    }
+    this.commonService.notifyLanguageChange(language);
   }
 }

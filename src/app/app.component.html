@@ -1,8 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="container-fullwidth" style="height: 4.5rem;">
+<div class="container-fullwidth" style="height: 3.5em;">
   <div class="row">
     <nav class="navbar navbar-expand-sm navbar-dark nav-pills
-      shadow-sm p-3 mb-5 bg-white fixed-top">
+      shadow-md mb-5 bg-white fixed-top">
       <a href="#" class="navbar-brand text-primary" id="logo"> {{title}} </a>
 
       <button (click)="isCollapsed = !isCollapsed" class="navbar-toggler navbar-toggler-right"
@@ -57,10 +57,10 @@
             <a class="nav-link" href="projects"> Projects </a>
           </li>
           <li class="nav-item nav-btn-group">
-              <a href="javascript:" (click)="changeLanguage('eng')">
+              <a href="javascript:" (click)="changeLanguage('en')">
                 <img class="nav-btn-img" src="assets/uk_flag.svg" alt="English">
               </a>
-              <a href="javascript:" (click)="changeLanguage('spa')">
+              <a href="javascript:" (click)="changeLanguage('es')">
                 <img class="nav-btn-img" src="assets/spain_flag_no_shield.svg" alt="Español">
               </a>
           </li>
@@ -74,7 +74,8 @@
 <router-outlet></router-outlet>
 
 <footer class="fixed-bottom">
-  <div class="container-fullwidth bg-dark" style="padding: 1em;">
+  <div class="container-fullwidth bg-dark shadow-top"
+   style="max-height: 48px; padding: 6px;">
     <!-- Social -->
     <div class="row flex-center">
       <div class="col-md-12 py5 flex-center">
@@ -99,6 +100,9 @@
           <a class="icon-tag" title="Discord">
             <i class="socicon-discord white-text mr-md-5 mr-3"> </i>
           </a>
+          
+          <!-- Programs and languages icons -->
+          
           <!-- Visual Studio Code -->
           <a href="https://code.visualstudio.com/"
           title="Visual Studio Code - Text Editor">
@@ -140,7 +144,6 @@
     </div>
   </div>
 
-  <!-- Programs and languages icons -->
 
   <!-- Credits -->
   <div class="bg-grey-off">Profile icons made by 
