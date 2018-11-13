@@ -15,6 +15,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ArtComponent } from './art/art.component';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ProjectsListComponent } from './projects-list/projects-list.component';
     WelcomeComponent,
     ArtComponent,
     ProjectsListComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ArtComponent } from './art/art.component';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'blogs', component: BlogListComponent },
   { path: 'welcome', component: WelcomeComponent },
   { path: 'art', component: ArtComponent },
-  { path: 'projects', component: ProjectsListComponent }
+  { path: 'projects', component: ProjectsListComponent },
+  { path: '**', component: PageNotFoundComponent}
 ];
 
 

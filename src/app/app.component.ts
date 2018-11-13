@@ -23,7 +23,6 @@ export class AppComponent {
     
     commonService.languageChanged_Observable.subscribe( obj => {
       this.commonService.getJSON("./assets/local_" + obj.lang + ".json").subscribe(data => {
-        console.log(data);
         Object.keys(data).forEach(key => {
           this.staticTextLocal.set(key, data[key]);
         });
