@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DeliveryClient } from 'kentico-cloud-delivery';
+import { DeliveryClient, Fields } from 'kentico-cloud-delivery';
 import { Blog } from '../Models/blog.class';
 
 @Component({
@@ -12,6 +12,8 @@ export class BlogViewComponent implements OnInit {
   public blog: Blog;
 
   constructor(private deliveryClient: DeliveryClient) {
+    this.blog = new Blog();
+
     this.deliveryClient
     .item<Blog>("game_physics_1_a987616")
     .languageParameter('en')
