@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommonService {
 
-  public languageChanged_Observable = new Subject<string>();
+  public languageChanged_Observable = new BehaviorSubject<string>('es');
 
   constructor() { }
 

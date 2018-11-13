@@ -21,7 +21,7 @@ export class BlogListComponent implements OnInit {
 
 
   constructor(private deliveryClient: DeliveryClient, private commonService: CommonService) {
-    this.language = 'en';
+    this.language = commonService.languageChanged_Observable.getValue();
     this.getBlogs();
   }
 
