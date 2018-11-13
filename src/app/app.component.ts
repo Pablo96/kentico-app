@@ -10,10 +10,8 @@ import { CommonService } from './Services/common.service';
 export class AppComponent {
   title = 'Pablo Narvaja';
   BlogSeries: string[];
-  pageLang: string;
 
   constructor(private deliver: DeliveryClient, private commonService: CommonService) {
-    this.pageLang = "en";
     this.BlogSeries = ["All"];
   }
 
