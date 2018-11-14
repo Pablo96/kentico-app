@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
   { path: 'art', component: ArtComponent },
   { path: 'projects', component: ProjectsListComponent },
-  { path: 'blog', component: BlogViewComponent },
+  { path: 'blog/:slug', component: BlogViewComponent },
   { path: '**', component: PageNotFoundComponent}
 ];
 

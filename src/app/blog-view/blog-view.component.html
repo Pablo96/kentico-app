@@ -1,16 +1,17 @@
-<div class="blog-container m-3">
-  <h1 class="p-3">
-    {{blog.title.text}}
-  </h1>
+<div class="blog-container">
+  <div class="blog m-3">
+    <h1 class="p-3">
+      {{blog.title.text}}
+    </h1>
   
-  <hr>
-
-  <div class="blog p-3" [innerHTML]="blog.content.value"></div>
+    <hr>
   
-  <hr>
+    <div class="blog-content p-3" [innerHTML]="blog.content.value"></div>
   
-  <div class="text-right pb-2 pr-3" style="font-weight: bold; font-size: .8em;">
-    {{ blog.date.datetime.toLocaleDateString() }}
+    <hr>
+  
+    <div class="text-right pb-2 pr-3" style="font-weight: bold; font-size: .8em;">
+      {{ blog.date.datetime.toLocaleDateString() }}
+    </div>
   </div>
 </div>
-
