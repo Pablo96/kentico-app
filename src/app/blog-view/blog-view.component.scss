@@ -3,6 +3,7 @@
     min-width: 50rem;
     left: 25%;
     right: 25%;
+    max-height: 100%;
 }
 
 .blog {
@@ -11,10 +12,21 @@
     border-width: .2rem;
     border-color: orange;
     border-radius: .2rem;
+    max-height: 100%;
 }
 
 .blog-content {
     p {
-        text-align: center !important;
+        text-align: left !important;
+        color: black !important;
+    }
+    img {
+        max-width: 100%;
+    }
+    .title {
+
+    }
+    .subtitle {
+        
     }
 }

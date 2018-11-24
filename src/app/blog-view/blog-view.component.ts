@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
 import { DeliveryClient, Fields } from 'kentico-cloud-delivery';
 import { Blog } from '../Models/blog.class';
-import { Observable } from 'rxjs';
+import { ViewEncapsulation } from '@angular/core';
 
 
 @Component({
   selector: 'app-blog-view',
   templateUrl: './blog-view.component.html',
-  styleUrls: ['./blog-view.component.scss']
+  styleUrls: ['./blog-view.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class BlogViewComponent implements OnInit {
 
