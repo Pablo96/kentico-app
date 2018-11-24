@@ -3,5 +3,7 @@
     "blogs": "blogs",
     "art": "arte",
     "projects": "proyectos",
-    "wip" : "Trabajo en Progreso"
+    "wip" : "Trabajo en Progreso",
+    "pageNotFound" : "Ups! Pagina no encontrada",
+    "redirMainPage" : "Ir a pagina principal"
 }

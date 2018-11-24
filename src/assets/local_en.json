@@ -3,5 +3,7 @@
     "blogs": "blogs",
     "art": "art",
     "projects": "projects",
-    "wip" : "Work in Progres"
+    "wip" : "Work in Progres",
+    "pageNotFound" : "Oops! Page not Found",
+    "redirMainPage" : "Redirect to main page"
 }

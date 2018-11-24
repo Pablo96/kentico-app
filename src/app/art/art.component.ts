@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DeliveryClient } from 'kentico-cloud-delivery';
 import { ArtPreview } from '../Models/art_preview.class';
 import { CloudError } from 'kentico-cloud-core';
+import { CommonService } from '../Services/common.service';
 
 @Component({
   selector: 'app-art',
@@ -12,12 +13,18 @@ export class ArtComponent implements OnInit {
 
   public artPrevs: ArtPreview[];
   public pageSize = 10;
-
+  public msg: string;
   // optional member ?:
   public error?: string;
 
-  constructor(private deliveryClient: DeliveryClient) {
+  constructor(private deliveryClient: DeliveryClient,
+     private commonService: CommonService) {
     this.getArtPrevs();
+    commonService.languageChanged_Observable.subscribe( value => {
+      this.commonService.getJSON("./assets/local_" + value.lang + ".json").subscribe(data => {
+        this.msg = data["wip"];
+      });
+    })
   }
 
   ngOnInit() {

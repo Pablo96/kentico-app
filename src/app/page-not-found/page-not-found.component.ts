@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../Services/common.service';
 
 @Component({
   selector: 'app-page-not-found',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageNotFoundComponent implements OnInit {
 
-  constructor() { }
+  public msg: string;
+  public btnLabel: string;
+  constructor(private commonService: CommonService) {
+    commonService.languageChanged_Observable.subscribe( value => {
+      this.commonService.getJSON("./assets/local_" + value.lang + ".json").subscribe(data => {
+        this.msg = data["pageNotFound"];
+        this.btnLabel = data["redirMainPage"];
+      });
+    })
+  }
 
   ngOnInit() {
   }

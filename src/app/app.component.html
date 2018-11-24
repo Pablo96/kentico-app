@@ -14,11 +14,12 @@
       <div id="navbarSupportedContent" class="collapse navbar-collapse" [collapse]="!isCollapsed">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="welcome"> {{staticTextLocal.get('welcome')}} </a>
+            <!-- If you use href instead of routerlink it will reload the page to that url and restart all services -->
+            <a class="nav-link" routerLink="welcome"> {{staticTextLocal.get('welcome')}} </a>
           </li>
           <!-- dropdown for desktop version -->
           <li class="nav-item btn-group desktop" dropdown >
-              <a class="nav-link " href="blogs">{{staticTextLocal.get('blogs')}}</a>
+              <a class="nav-link "  routerLink="blogs">{{staticTextLocal.get('blogs')}}</a>
               <a id="button-split" dropdownToggle
                class="nav-link dropdown-toggle dropdown-toggle-split"
                aria-controls="dropdown-split">
@@ -26,7 +27,7 @@
               <ul id="dropdown-split" *dropdownMenu class="dropdown-menu"
                   role="menu" aria-labelledby="button-split">
                 <li role="menuitem"  *ngFor="let serie of blogSeries">
-                  <a class="dropdown-item" href="{{serie.url}}">{{serie.name}}</a>
+                  <a class="dropdown-item" routerLink="{{serie.url}}">{{serie.name}}</a>
                 </li>
               </ul>
           </li>
@@ -36,17 +37,17 @@
               <accordion-group heading="{{staticTextLocal.get('blogs')}}" panelClass="nav-link-dark">
                 <ul>
                   <li role="menuitem"  *ngFor="let serie of blogSeries">
-                    <a class="dropdown-item" href="javascript:">{{serie}}</a>
+                    <a class="dropdown-item" routerLink="javascript:">{{serie}}</a>
                   </li>
                 </ul>
               </accordion-group>
             </accordion>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="art"> {{staticTextLocal.get('art')}} </a>
+            <a class="nav-link" routerLink="art"> {{staticTextLocal.get('art')}} </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="projects"> {{staticTextLocal.get('projects')}} </a>
+            <a class="nav-link" routerLink="projects"> {{staticTextLocal.get('projects')}} </a>
           </li>
           <li class="nav-item nav-btn-group">
               <a href="javascript:" (click)="changeLanguage('en')">
