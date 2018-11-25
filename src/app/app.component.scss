@@ -10,7 +10,7 @@ $a-tags-hover: 'a:active, a:hover';
 }
 
 .icon-tag:active, .icon-tag:hover, .icon-tag:visited{
-    color: #EEE;
+    color: #F91;
     text-decoration: none;
 }
 .icon-tag:active, .icon-tag:hover {
@@ -54,4 +54,52 @@ $a-tags-hover: 'a:active, a:hover';
     box-shadow: 0 -5px 5px -5px #0005;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+}
+
+
+.btn-vertical {
+    transform: rotate(90deg);
+    transform-origin: right top 0;
+}
+
+.btn-info, .btn-info:active, .btn-info:focus{
+    position: fixed;
+    top: 50%;
+	background:
+		linear-gradient(315deg, transparent 5px, #222 0) bottom right,
+		linear-gradient(45deg,  transparent 5px, #222 0) bottom left;
+	background-size: 50% 100%;
+    background-repeat: no-repeat;
+    border-style: none;
+    border: 0;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.btn-right {
+    right: 0;
+}
+
+.icon-btn,
+.icon-btn:hover,
+.icon-btn:focus,
+.icon-btn:active {
+    color: orange;
+    outline: none;
+    box-shadow: none;
+}
+
+.bg-contact-info {
+    display: block;
+    position: fixed;
+    top: 25%;
+    right: 0;
+    background: #222;
+    -webkit-box-shadow: 0px 0px 6px 1px rgba(240,143,16,0.2);
+    -moz-box-shadow: 0px 0px 6px 1px rgba(240,143,16,0.2);
+    box-shadow: 0px 0px 6px 1px rgba(240,143,16,0.2);
+}
+
+#hr-info-1, #hr-info-2 {
+    border-color: orange;
 }

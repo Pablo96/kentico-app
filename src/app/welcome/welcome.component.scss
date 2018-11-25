@@ -1,9 +1,14 @@
 .bg-welcome {
-    background: url("../../assets/bg_welcome.jpg") no-repeat center center fixed;
+    width: 100%;
+    background: url("../../assets/bg_welcome.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.home-container {
+    margin-bottom: 24px;
 }
 
 .fill-screen {

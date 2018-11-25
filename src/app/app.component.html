@@ -63,6 +63,58 @@
   </div>
 </div>
 
+<!-- Contact info -->
+<button class="btn-info btn-right btn-vertical"
+(click)="contactHide = !contactHide">
+    Contact Info
+</button>
+
+<div  id="contact-info"
+          class="bg-contact-info"
+          [hidden]="!contactHide"
+          >
+  <button class="btn bg-transparent icon-btn"
+          (click)="contactHide = !contactHide">
+    <i class="material-icons">
+        close
+    </i>
+  </button>
+  <img class="img-fluid mb-5 d-block mx-auto"
+  src="assets/profile.svg" alt="" style="max-width: 128px;">
+  
+  <hr id="hr-info-1">
+
+  <p class="text-white text-center">
+    Pablo Narvaja <br>
+    Cordoba - Argentina<br>
+    <a href="javascript:">pnarvaja.21@gmail.com</a>
+  </p>
+
+  <hr id="hr-info-2">
+ 
+  <!-- Social -->
+  <div class="container" style="width: 100%; padding: 15px">
+    <div class="mb-7 flex-center">
+        <!-- GitHub -->
+        <a class="icon-tag" title="Github" href="http://github.com/Pablo96">
+          <i class="socicon-github white-text mr-md-5 mr-3"> </i>
+        </a>
+        <!-- LinkedIn -->
+        <a class="icon-tag" title="LinkedIn" href="https://www.linkedin.com/in/pablo-narvaja-35615813b/">
+          <i class="socicon-linkedin white-text mr-md-5 mr-3"> </i>
+        </a>
+        <!-- Youtube -->
+        <a class="icon-tag" title="YouTube" href="https://www.youtube.com/channel/UCtri-c1EvlHBeOLzAbyv5zg">
+          <i class="socicon-youtube white-text mr-md-5 mr-3"> </i>
+        </a>
+        <!-- Patreon -->
+        <a class="icon-tag" title="Patreon">
+          <i class="socicon-patreon white-text mr-md-5 mr-3"> </i>
+        </a>
+    </div>
+  </div>
+</div>
+
 <!-- Router component placement of component-->
 <router-outlet style="margin-bottom: 72px;"></router-outlet>
 
