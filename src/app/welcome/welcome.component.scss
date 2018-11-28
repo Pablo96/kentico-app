@@ -21,3 +21,26 @@
 {
     background: #ccc !important;
 }
+
+#useful-links {
+    background: linear-gradient(to bottom, #F91B, #444 95%);
+}
+
+#last-blogs {
+    background: #444;
+    width: 100%;
+    height: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+#carousel-blogs {
+    padding-bottom: 2rem; 
+}
+
+a{
+    &:hover {
+        text-decoration-color: orange;
+    }
+}

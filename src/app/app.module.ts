@@ -7,6 +7,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { AppComponent } from './app.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
@@ -35,6 +36,7 @@ import { BlogViewComponent } from './blog-view/blog-view.component';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     AccordionModule.forRoot(),
+    CarouselModule.forRoot(),
     AppRoutingModule,
   ],
   providers: [DeliveryClientProvider],

@@ -28,7 +28,6 @@ export class BlogListComponent implements OnInit {
   }
 
   public getBlogs(pageSize) {
-    //this.commonService.getBlogs(pageSize)
     this.deliveryClient
     .items<BlogPreview>()
     .type("blogpreview")

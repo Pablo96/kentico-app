@@ -1,9 +1,9 @@
-<div class="home-container">
+<div class="home-container" data-spy="scroll" data-target="#welcome" data-offset="0">
   <section  id="welcome"
             class="text-white text-center bg-welcome"
             style="padding: 1rem;">
    <img class="img-fluid mb-5 d-block mx-auto"
-    src="assets/profile.svg" alt="" style="width: 256px;">
+    src="assets/profile.svg" alt="" style="width: 226px;">
     <h1 class="text-uppercase mb-0">
       Pablo Narvaja's Web-Page
     </h1>
@@ -20,15 +20,43 @@
       {{welcome_text}}
     </h4>
     <button class="btn btn-warning">
-      <a href="#"></a>
+      <a href="#useful-links"></a>
       Lets start!
     </button>
   </section>
-
+  
   <section  id="last-blogs">
-
+    <a routerLink="/blogs">
+      <h3 class="text-white text-center text-uppercase"> Last Blogs </h3>
+    </a>
+    <hr style="padding: 0; margin: 0; margin-bottom: 1rem; border-color: orange">
+    <div id="carousel-blogs">
+      <carousel>
+        <slide *ngFor="let blog of blogsPrevs">
+          <a class="card border-warning text-white bg-dark card-link"
+            style="width: 18rem; padding: 0.2em;"
+            routerLink="/blog/game-physics-intro">
+            <div style="height: 36px; padding-top: 0.3em;
+            padding-left: 1.0em; padding-right: 1.0em;">
+              {{blog.serie.value[0].name}} Series
+            </div>
+            <img class="card-img" src="https://angular.io/assets/images/logos/angular/angular.svg"
+            alt="Card image cap" style="background: lightslategray; max-height: 256px">
+            <div class="card-block">
+              <h5 class="card-title">{{blog.title.text}}</h5>
+              <div class="card-text"> {{blog.description.value}} </div>
+            </div>
+            <hr style="margin-bottom: 0; border-color: #FA03;">
+            <div class="text-right" style="margin: 0.3em;">
+              <small>{{blog.date.datetime.toLocaleDateString()}}</small>
+            </div>
+          </a>
+        </slide>
+      </carousel>
+    </div>
   </section>
-
+  <hr style="margin: 0; border-color: #444E">
+    
   <section  id="last-art">
     
   </section>
@@ -39,41 +67,72 @@
   
   <!-- Programs and languages icons -->
   <section  id="useful-links">
+    <h3 class="text-white text-center text-uppercase"> Useful Links </h3>
+    <hr style="margin-top: 0;">
+    <div class="card-deck">
+      <!-- Blender -->
+      <a class="card text-white bg-transparent" style="width: 18rem; padding: 0.5rem; margin: 0.3rem;"
+        href="https://www.blender.org"
+        title="Blender 3D - modeling tool">
+        
+        <img  class="card-img-top" alt="Blender3D" src="assets/blender3d.svg">
+        <div class="card-body">
+          <p class="card-text">Blender3D - 3d Modeling tool.</p>
+        </div>
+      </a>
       <!-- Visual Studio Code -->
-      <a href="https://code.visualstudio.com/"
-      title="Visual Studio Code - Text Editor">
-      <img class="mr-md-5 mr-3"  alt="VisualStudioCode" style="width: 2rem;"
-        src="assets/VS_Code_1.18.svg">
+     <a class="card text-white bg-transparent" style="width: 18rem; padding: 0.5rem; margin: 0.3rem;"
+        href="https://code.visualstudio.com/"
+        title="Visual Studio Code - Text Editor">
+        
+        <img  class="card-img-top"  alt="VisualStudioCode" src="assets/VS_Code_1.18.svg">
+        <div class="card-body">
+          <p class="card-text">Visual Studio Code - Text Editor.</p>
+        </div>
       </a>
       <!-- Visual Studio IDE -->
-      <a href="https://code.visualstudio.com/"
-      title="Visual Studio Community - IDE">
-      <img class="mr-md-5 mr-3"  alt="VisualStudioCommunity" style="width: 2rem;"
-        src="assets/VS_2017_Logo.svg">
-      </a>
-      <!-- Blender -->
-      <a href="https://www.blender.org"
-      title="Blender 3D - modeling tool">
-        <img class="mr-md-5 mr-3" alt="Blender3D" style="width: 2rem;"
-        src="assets/blender3d.svg">
+      <a class="card text-white bg-transparent" style="width: 18rem; padding: 0.5rem; margin: 0.3rem;"
+        href="https://code.visualstudio.com/"
+        title="Visual Studio Community - IDE">
+        
+        <img  class="card-img-top" alt="VisualStudioCommunity" src="assets/VS_2017_Logo.svg">
+        <div class="card-body">
+          <p class="card-text">Visual Studio Community - Full IDE.</p>
+        </div>
       </a>
       <!-- GIMP -->
-      <a href="https://www.gimp.org/"
-      title="GIMP - Image manipulation tool">
-        <img class="mr-md-5 mr-3"  alt="GIMP" style="width: 2rem;"
-        src="https://upload.wikimedia.org/wikipedia/commons/4/45/The_GIMP_icon_-_gnome.svg">
+      <a class="card text-white bg-transparent" style="width: 18rem; padding: 0.5rem; margin: 0.3rem;"
+        href="https://www.gimp.org/"
+        title="GIMP - Image manipulation tool">
+        
+        <img  class="card-img-top"  alt="GIMP"
+         src="https://upload.wikimedia.org/wikipedia/commons/4/45/The_GIMP_icon_-_gnome.svg">
+        <div class="card-body">
+          <p class="card-text">GIMP - Image manipulation tool.</p>
+        </div>
       </a>
       <!-- Inkscape -->
-      <a href="https://inkscape.org/"
-      title="Inskape- SVG tool">
-      <img class="mr-md-5 mr-3"  alt="Inkscape" style="width: 2rem;"
+      <a class="card text-white bg-transparent" style="width: 18rem; padding: 0.5rem; margin: 0.3rem;"
+        href="https://inkscape.org/"
+        title="Inskape- SVG tool">
+        
+        <img  class="card-img-top"  alt="Inkscape"
         src="https://inkscape.org/es/gallery/item/1076/Inkscape_Logo_Standard_square.svg">
+        <div class="card-body">
+          <p class="card-text">Inskape - SVG Tool.</p>
+        </div>
       </a>
+
       <!-- Credits to freepik -->
-      <a href="https://www.freepik.com"
-        title="Icon by Freepik">
-          <img class="mr-md-5 mr-3"
-          src="assets/profile.svg" alt="Freepik's_Icons" style="width: 2rem;">
+      <a class="card text-white bg-transparent" style="width: 18rem; padding: 0.5rem; margin: 0.3rem;"
+        href="https://www.freepik.com"
+        title="Icons by Freepik">
+        
+        <img  class="card-img-top" src="assets/profile.svg" alt="Freepik's_Icons">
+        <div class="card-body">
+          <p class="card-text">Icons by Freepik.</p>
+        </div>
       </a>
+    </div>
   </section>
 </div>
