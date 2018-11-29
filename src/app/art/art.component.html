@@ -1,14 +1,14 @@
-<div class="container-fullwidth text-white text-center">
-  <h1> {{msg}} </h1>
+<h3 class="text-white text-center text-uppercase section-title"> Art Portfolio </h3>
+<div class="card-deck" style="margin: 2rem">
+  <div *ngFor="let artPrev of artPrevs">
+    <a href="javascript:">
+      <div class="card border-warning text-white card-size">
+          <img class="card-img" src="{{artPrev.image.value[0].url}}" alt="Card image">
+          <div class="card-img-overlay">
+            <h5 class="card-title card-text-title card-text-overlay">{{artPrev.title.value}}</h5>
+            <p class="card-text card-text-date card-text-overlay">{{artPrev.date.datetime.toLocaleDateString()}}</p>
+          </div>
+      </div>
+    </a>
+  </div>
 </div>
-
-<!--
-<ul>
-  <li *ngFor="let artPrev of artPrevs">
-    <h1> {{artPrev.art.value.name}}</h1>
-    <h2> {{artPrev.description.value}}</h2>
-    <h4> {{artPrev.art.value.url}} </h4>
-    <h4> {{artPrev.art.value.date}} </h4>
-  </li>
-</ul>
--->

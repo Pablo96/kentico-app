@@ -1,0 +1,25 @@
+.card-text-date {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+}
+
+.card-text-overlay {
+    background: #0008 !important;
+    padding: 0.3rem;
+    width: fit-content;
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+.card-text-title {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+
+.card-size {
+    max-width: 328px; 
+    max-height: fit-content;
+    margin-bottom: 2rem;
+}

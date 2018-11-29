@@ -1,10 +1,10 @@
 import { ContentItem, Fields} from 'kentico-cloud-delivery';
 
 export class ArtPreview extends ContentItem {
+    public title: Fields.TextField;
+    public art: Fields.AssetsField;
     public description: Fields.TextField;
     public date: Fields.DateTimeField;
-    public art: Fields.AssetsField;
-    public title: Fields.TextField;
 
     constructor() {
         super({
