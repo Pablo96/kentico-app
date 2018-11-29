@@ -1,5 +1,5 @@
-<div style="padding: 0.5em; margin-bottom: 24px;">
-  <div class="card-deck">
+<div class="card-container">
+  <div class="card-columns">
     <div *ngFor="let blog of blogs">
       <a class="card border-warning text-white bg-dark card-link"
        style="width: 18rem; padding: 0.2em;"
@@ -19,6 +19,30 @@
           <small>{{blog.date.datetime.toLocaleDateString()}}</small>
         </div>
       </a>
+    </div>
+  </div>
+</div>
+<div class="fixed-bottom"  style="bottom:24px;">
+  <div>
+    <div class="btn-group" dropdown [dropup]="1" [autoClose]="0">
+      <button id="button-dropup" dropdownToggle type="button" class="btn btn-warning dropdown-toggle"
+              aria-controls="dropdown-dropup">
+        Rows Count <span class="caret"></span>
+      </button>
+      <ul id="dropdown-dropup" *dropdownMenu class="dropdown-menu"
+          role="menu" aria-labelledby="button-dropup">
+          <li role="menuitem">
+            <span class="dropdown-item text-center">
+              <input  type="text" placeholder="Custom" id="rowCountInput"
+                      style="width: 100%">
+            </span>
+          </li>
+          <li class="divider dropdown-divider"></li>
+          <li role="menuitem"><a class="dropdown-item text-center" (click)="dropdown.hide()">8</a></li>
+          <li role="menuitem"><a class="dropdown-item text-center" (click)="dropdown.hide()">6</a></li>
+          <li role="menuitem"><a class="dropdown-item text-center" (click)="dropdown.hide()">4</a></li>
+          <li role="menuitem"><a class="dropdown-item text-center" (click)="dropdown.hide()">2</a></li>
+      </ul>
     </div>
   </div>
 </div>

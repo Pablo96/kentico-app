@@ -4,3 +4,12 @@
         text-decoration: none;
     }
 }
+
+.card-container {
+    margin-left: 22%;
+    margin-right: 22%;
+    @media(max-width: 87rem) {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}

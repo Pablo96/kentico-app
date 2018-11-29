@@ -40,6 +40,12 @@ export class BlogListComponent implements OnInit {
       result => {
         console.log(result);
         this.blogs = result.items;
+        if (this.blogs.length == 1)
+        {
+          for (let index = 0; index < 50; index++) {
+            this.blogs.push(this.blogs[0]);            
+          }
+        }
       },
       error => {
         this.handleCloudError(error);

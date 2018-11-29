@@ -63,12 +63,16 @@
   </div>
 </div>
 
+
+
+<!-- Router component placement of component-->
+<router-outlet style="margin-bottom: 72px;"></router-outlet>
+
 <!-- Contact info -->
 <button class="btn-info btn-right btn-vertical"
-(click)="contactHide = !contactHide">
+(click)="contactHide = !contactHide" [hidden]="contactHide">
     Contact Info
 </button>
-
 <div  id="contact-info"
           class="bg-contact-info"
           [hidden]="!contactHide"
@@ -115,8 +119,6 @@
   </div>
 </div>
 
-<!-- Router component placement of component-->
-<router-outlet style="margin-bottom: 72px;"></router-outlet>
 
 <!-- Footer for credits and social links-->
 <footer class="fixed-bottom" style="max-height: 24px;">
