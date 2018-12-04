@@ -23,26 +23,13 @@
   </div>
 </div>
 <div class="fixed-bottom"  style="bottom:24px;">
-  <div>
-    <div class="btn-group" dropdown [dropup]="1" [autoClose]="0">
-      <button id="button-dropup" dropdownToggle type="button" class="btn btn-warning dropdown-toggle"
-              aria-controls="dropdown-dropup">
-        Rows Count <span class="caret"></span>
-      </button>
-      <ul id="dropdown-dropup" *dropdownMenu class="dropdown-menu"
-          role="menu" aria-labelledby="button-dropup">
-          <li role="menuitem">
-            <span class="dropdown-item text-center">
-              <input  type="text" placeholder="Custom" id="rowCountInput"
-                      style="width: 100%">
-            </span>
-          </li>
-          <li class="divider dropdown-divider"></li>
-          <li role="menuitem"><a class="dropdown-item text-center" (click)="dropdown.hide()">8</a></li>
-          <li role="menuitem"><a class="dropdown-item text-center" (click)="dropdown.hide()">6</a></li>
-          <li role="menuitem"><a class="dropdown-item text-center" (click)="dropdown.hide()">4</a></li>
-          <li role="menuitem"><a class="dropdown-item text-center" (click)="dropdown.hide()">2</a></li>
-      </ul>
+  <div class="dropup text-center" style="width: 64px">
+    <button class="dropbtn">Row count</button>
+    <div class="dropup-content">
+      <input  type="text" placeholder="Custom" id="rowCountInput" style="width: 100%">
+      <a href="#">3</a>
+      <a href="#">2</a>
+      <a href="#">1</a>
     </div>
   </div>
 </div>
