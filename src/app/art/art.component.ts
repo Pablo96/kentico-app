@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DeliveryClient } from 'kentico-cloud-delivery';
 import { ArtPreview } from '../Models/art_preview.class';
-import { CloudError } from 'kentico-cloud-core';
 import { CommonService } from '../Services/common.service';
 
 @Component({
@@ -13,8 +12,7 @@ export class ArtComponent implements OnInit {
 
   public artPrevs: ArtPreview[];
   public pageSize = 10;
-  // optional member ?:
-  public error?: string;
+
 
   constructor(private deliveryClient: DeliveryClient,
      private commonService: CommonService) {
@@ -43,17 +41,7 @@ export class ArtComponent implements OnInit {
         }
       },
       error => {
-        this.handleCloudError(error);
+        this.commonService.handleCloudError(error);
       })
-  }
-
-  private handleCloudError(error: CloudError | any): void {
-    if (error instanceof CloudError) {
-      this.error = `Kentico Cloud Error occured with message: '${
-        error.message
-        }' for request with id = '${error.requestId}'`;
-    } else {
-      this.error = 'Unknown error occured';
-    }
   }
 }

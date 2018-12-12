@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogPreview } from '../Models/blog_preview.class';
 import { DeliveryClient } from 'kentico-cloud-delivery';
-import { CloudError } from 'kentico-cloud-core';
 import { CommonService } from '../Services/common.service';
 
 @Component({
@@ -13,8 +12,6 @@ export class BlogListComponent implements OnInit {
 
   public blogs: BlogPreview[];
   public pageSize = 10;
-  // optional member ?:
-  private error?: string;
 
 
   constructor(private commonService: CommonService, private deliveryClient: DeliveryClient) {
@@ -48,17 +45,9 @@ export class BlogListComponent implements OnInit {
         }
       },
       error => {
-        this.handleCloudError(error);
+        this.commonService.handleCloudError(error);
       })
   }
 
-  private handleCloudError(error: CloudError | any): void {
-    if (error instanceof CloudError) {
-      this.error = `Kentico Cloud Error occured with message: '${
-        error.message
-        }' for request with id = '${error.requestId}'`;
-    } else {
-      this.error = 'Unknown error occured';
-    }
-  }
+  
 }
