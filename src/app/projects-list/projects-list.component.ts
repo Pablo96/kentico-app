@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../Services/common.service';
+import { DeliveryClient } from 'kentico-cloud-delivery';
+import { ProjectPreview } from '../Models/project-preview.class';
 
 @Component({
   selector: 'app-projects-list',
@@ -8,17 +10,29 @@ import { CommonService } from '../Services/common.service';
 })
 export class ProjectsListComponent implements OnInit {
 
-  public msg:string;
-  
-  constructor(private commonService: CommonService) {
-    commonService.languageChanged_Observable.subscribe( value => {
-      this.commonService.getJSON("./assets/local_" + value.lang + ".json").subscribe(data => {
-        this.msg = data["wip"];
-      });
-    })
+  public previews: ProjectPreview[];
+
+  constructor(private delivery: DeliveryClient, private commonService: CommonService) {
+    this.getProjectsPrevs();
   }
 
   ngOnInit() {
   }
 
+  private getProjectsPrevs() {
+    this.delivery
+    .items<ProjectPreview>()
+    .type("projectpreview")
+    .languageParameter(this.commonService.languageChanged_Observable.getValue().lang)
+    .orderByDescending("elements.date")
+    .getObservable()
+    .subscribe( result =>
+      {
+        this.previews = result.items;
+      },
+      error => {
+        this.commonService.handleCloudError(error);
+      }
+    )
+  }
 }
