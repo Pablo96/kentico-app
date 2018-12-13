@@ -30,19 +30,21 @@ export class BlogListComponent implements OnInit {
     .type("blogpreview")
     .languageParameter(this.commonService.languageChanged_Observable.getValue().lang)
     .depthParameter(1)
-    .limitParameter(pageSize)
+    //.limitParameter(pageSize)
     .orderByDescending("elements.date")
     .getObservable()
     .subscribe(
       result => {
         console.log(result);
         this.blogs = result.items;
+        /* uncomment for testing
         if (this.blogs.length == 1)
         {
           for (let index = 0; index < 50; index++) {
             this.blogs.push(this.blogs[0]);            
           }
         }
+        */
       },
       error => {
         this.commonService.handleCloudError(error);
