@@ -19,7 +19,7 @@
           </li>
           <!-- dropdown for desktop version -->
           <li class="nav-item btn-group desktop" dropdown >
-              <a class="nav-link "  routerLink="/blogs">{{staticTextLocal.get('blogs')}}</a>
+              <a class="nav-link "  routerLink="/wip">{{staticTextLocal.get('blogs')}}</a>
               <a id="button-split" dropdownToggle
                class="nav-link dropdown-toggle dropdown-toggle-split"
                aria-controls="dropdown-split">
@@ -37,17 +37,17 @@
               <accordion-group heading="{{staticTextLocal.get('blogs')}}" panelClass="nav-link-dark">
                 <ul>
                   <li role="menuitem"  *ngFor="let serie of blogSeries">
-                    <a class="dropdown-item" routerLink="javascript:">{{serie}}</a>
+                    <a class="dropdown-item" routerLink="/wip">{{serie}}</a>
                   </li>
                 </ul>
               </accordion-group>
             </accordion>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/art"> {{staticTextLocal.get('art')}} </a>
+            <a class="nav-link" routerLink="/wip"> {{staticTextLocal.get('art')}} </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/projects"> {{staticTextLocal.get('projects')}} </a>
+            <a class="nav-link" routerLink="/wip"> {{staticTextLocal.get('projects')}} </a>
           </li>
           <li class="nav-item nav-btn-group">
               <a href="javascript:" (click)="changeLanguage('en')">
