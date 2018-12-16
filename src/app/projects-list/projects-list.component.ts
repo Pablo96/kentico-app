@@ -29,6 +29,7 @@ export class ProjectsListComponent implements OnInit {
     .subscribe( result =>
       {
         this.previews = result.items;
+        console.log(this.previews[0].image.assets.pop().url)
       },
       error => {
         this.commonService.handleCloudError(error);

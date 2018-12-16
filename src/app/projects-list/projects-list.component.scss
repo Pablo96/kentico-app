@@ -3,9 +3,9 @@
     min-width: 50rem;
     left: 25%;
     right: 25%;
-    height: 100%;
-    padding-top: .5rem;
-    padding-bottom: 84px;
+    height: auto;
+    top: 4rem;
+    bottom: 24px;
 }
 
 .list-bg {
@@ -15,4 +15,17 @@
     border-color: orange;
     border-radius: .2rem;
     height: 100%;
+    h3 {
+        color: black;
+    }
+}
+
+.shadow-gradient {
+    display: block;
+    position: fixed;
+    bottom: 24px;
+    right: 25%;
+    left: 25%;
+    background: linear-gradient(to top, #444, transparent);
+    height: 100px;
 }
